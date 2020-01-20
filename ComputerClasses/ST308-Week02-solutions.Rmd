@@ -1,0 +1,280 @@
+---
+title: "ST308 - week 02 - With Solutions"
+output: html_document
+---
+      
+In this workshop:
+
+- Basic commands for vectors and matrices
+- Data visualisation
+- Loading data 
+
+## Basic R Commands
+
+**Vectors and sequences**
+
+- Create vectors x and y
+- Vector arithmetic
+
+
+```{r setup, include=TRUE}
+
+x <- c(1,3,2,5)
+y <-  c(1,4,3,0)
+
+length(x)
+length(y)
+
+x+y
+2*x-y+1
+```
+
+The function `seq` creates a sequence of numbers
+
+```{r}
+#sequences
+x <- seq(1,10)
+
+#sequence with specified number of values
+y <- seq(1,10,length.out=20)
+
+```
+
+`rm` is the function that removes objects from the environment
+
+```{r}
+rm(x,y)  #to remove objects x and y
+#rm(list=ls())
+```
+
+
+**Matrices**
+
+The function `matrix` creates a matrix object. 
+
+To construct a 2X2 matrix with numbers from 1 to 4, do:
+
+
+```{r}
+?matrix
+x=matrix(data=c(1,2,3,4), nrow=2, ncol=2)
+x
+x=matrix(c(1,2,3,4),2,2)
+
+```
+
+**Elementwise operations on matrices**
+
+To find the square root and the square of each matrix's component:
+
+```{r}
+# Elementwise operations on matrices
+sqrt(x)
+x^2
+```
+
+****
+
+
+## Indexing Data
+
+Below are some commands for practicing in working with matrices and accessing their elements
+
+```{r}
+A=matrix(1:16,4,4)
+A
+A[2,3] 
+A[c(1,3),c(2,4)]
+A[1:3,2:4]
+A[1:2,]
+A[,1:2]
+A[1,]
+A[-c(1,3),]
+A[-c(1,3),-c(1,3,4)]
+dim(A)
+```
+
+
+## Drawing observations from normal distribution
+
+```{r}
+
+x=rnorm(50)
+
+#for replicability set seed
+set.seed(1303)
+rnorm(50)
+
+set.seed(3)
+y=rnorm(100)
+mean(y)
+var(y)
+sqrt(var(y))
+sd(y)
+```
+
+**Correlations**
+
+Recall the Pearson correlation measures the strength of linear relationshiop between 2 quantitative variables, and takes values [-1,1].
+
+Task: Create 2 variables: 50 observations from $X \sim N(0,1)$, and $Y=X+N(50,0.1^2)$
+Then compute the (Pearson's) correlation.
+
+```{r}
+
+y=x+rnorm(50,mean=50,sd=.1)
+cor(x,y)
+```
+
+
+## Activity 1
+
+1. Run the following chunk:
+
+```{r}
+A <- matrix(c(1,2,3,4),2,2,byrow=TRUE)
+t(A) 
+```
+
+What does the function `t` do?
+
+#### Answer
+
+Transposes the matrix
+
+2. Draw 10 numbers from the normal distribution with mean 5 and variance 2. Store them in the vector x and calculate the sample mean and standard deviation. Put them in a 2 X 5 matrix by row and and raise each number to the power of three.
+
+```{r}
+set.seed(1)
+x = rnorm(10,5,sqrt(2)) #note the standard deviation is required
+x
+mean(x)
+sd(x)
+M = matrix(x,2,5,byrow=T)
+M
+M^3
+```
+
+## Data visualisation
+
+R has a set of functions for creating plots. A popular package for data visualisation is ggplot. We will focus on the core R graphics.
+
+
+3. Do a contour plot with the command `contour`. This requires three arguments: a vector of the x values, the y values and a matrix whose values correspond to each (x,y) pair (coordinates). Also do a heatmap with the command `image`.
+4. Produce a 3-d plot for the above with the commande `persp`. The two arguments theta and phi control the angles at which the plot is viewed. 
+
+**Scatterplot**
+
+1st simulate data for 2 variables and store values in a data frame object.
+
+```{r}
+x1 <- rnorm(100)
+y1 <- rnorm(100)
+
+dat <- data.frame(x1,y1)
+dat
+```
+
+`plot` produces a scatterplot
+
+```{r}
+plot(x1,y1) #note order matters
+
+```
+
+To save the plot as a pdf in your folder, do:
+
+```{r}
+pdf("Figure.pdf")
+plot(x,y,col="blue")
+dev.off()  #closes the plot and uploads it 
+```
+
+
+## Loading Data
+
+The functions for loading data depends on the format of the data.
+
+- `read.table` is used to load data that is stored as a txt or csv file. 
+- `read.csv` is for csv
+
+A common error when loading data is not checking whether or not the data comes with a header. 
+Also, if you had not already done so at the beginning of your session, set the working directory to the folder where your files are stored.
+
+**Example: Automobile data**
+
+The data Auto.data.txt consists of variables on the profile of vehicles. The data set contains a header (check). 
+Data sets may have variables with missing values. Here, `na.strings=?` sets anything with ? to NA.
+
+Load the data and check all us ok using `head`:
+
+```{r}
+Auto <- read.table("Auto.data.txt", header=T,na.strings="?")
+head(Auto)
+```
+
+`summary` gives the 5-point summary statistics  plus the mean for each variable.
+
+```{r}
+summary(Auto)
+```
+
+**Subsetting data**
+
+How many vehicles have mpg>30? 
+What is the distribution of mpg with horsepower = 90?
+
+We can answer such question by using functions for subsetting the data. There is more than one way to subset data and it's a matter of preference.
+
+The number of vehicles is:
+
+```{r}
+nrow(subset(Auto,mpg>10)) #or use dim
+```
+
+The histogram for mpg with horsepower =90 is:
+
+```{r}
+hist(Auto$mpg[Auto$horsepower==90]) # note the double =
+```
+
+
+## Activity 2
+
+This exercise involves the Boston housing data set which is
+part of the MASS library in R. You can read about it typing `?Boston` after loading the library. To load and view part of it use the following commands:
+
+```{r}
+library(MASS)
+head(Boston)
+```
+
+
+(a) How many rows are in this data set? How many columns? What do the rows and columns represent?
+
+(b) Are any of the predictors 'age', dis 'ptratio' appear to be associated with per capita crime rate? If so, explain the relationship.
+
+(c) In this data set, how many of the suburbs average more than seven rooms per dwelling? More than eight rooms per dwelling?
+
+
+```{r, include=FALSE}
+#(a)
+library(MASS)
+?Boston
+dim(Boston)
+# 506 rows, 14 columns
+# 14 features, 506 housing values in Boston suburbs
+
+# (b)
+plot(Boston$age, Boston$crim)
+# Older homes, more crime
+plot(Boston$dis, Boston$crim)
+# Closer to work-area, more crime
+plot(Boston$ptratio, Boston$crim)
+# Higher pupil:teacher ratio, more crime
+
+# (c)
+dim(subset(Boston, rm > 7))
+```
+
+
