@@ -1,4 +1,3 @@
-# ST451: Bayesian Machine Learning
+# ST308: Bayesian Inference
 
-Material for web page of this postgraduate course of London School of Economics. Part of several MSc programmes but mainly
-MSc Data Science and MSc Statistics
+Material for web page of this 3rd year undergraduate course of London School of Economics. Part of several BSc programmes but mainly BSc Actuarial Science, BSc Mathematics, Statistics and Business.
