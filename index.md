@@ -1,4 +1,4 @@
-# ST451 Bayesian Machine Learning 
+# ST308 Bayesian Inference 
 
 ### Lent Term 2020
 
@@ -7,24 +7,24 @@
 * [Kostas Kalogeropoulos](https://kostaskalog.github.io/webpage/), [email](mailto:k.kalogeropoulos@lse.ac.uk), Department of Statistics.  *Office hours*: Mondays 10:30-12:30, COL 6.10
 
 ### Teaching Assistants
-* Gianluca Giudice [email](mailto:g.giudice@lse.ac.uk), Department of Statistics
-* Phil Chan, [email](mailto:p.chan@lse.ac.uk), Department of Statistics.  
+* Phil Chan, [email](mailto:p.chan@lse.ac.uk), Department of Statistics.
+* Patrick Ascermayr [email](mailto:p.aschermayr@lse.ac.uk), Department of Statistics  
 
 
 ### Course Information
 
-- **Lectures** on Mondays 13:00–15:00 in NAB.2.04 (except week 6 which is NAB.LG.01).
-- **Computer Classes** there are 3 groups: 
-  1. Mondays 15:00–16:30 in STC.S018 taught by Kostas Kalogeropoulos
-  2. Tuesdays 16:00-17:30 in FAW.4.03 taught by Gianluca Giudice
-  3. Thursdays 15:00-16:30 in STC.S08 taught by Phil Chan
+- **Lectures** on Fridays 10:00–12:00 in NAB.2.04 (except week 6 which is NAB.LG.01).
+- **Seminars / Computer Classes** there are 3 groups: 
+  1. Thursdays 13:00–14:00 in STC.S08 (most of the times) taught by Phil Chan
+  2. Thursdays 14:00-15:00 in STC.S08 (most of the times) taught by Phil Chan
+  3. Fridays 15:00-16:00 in FAW.4.02 (all of the times) taught by Patrick Aschermayr
  
  There will be **no reading week**, hence teaching will be concluded on week 10. 
 
 | **Week** | **Topic**                            |
 |----------|--------------------------------------|
 | 1        | [Bayesian Inference Concepts](#week-1-bayesian-inference-concepts) |
-| 2        | [Bayesian Linear Regression](#week-2-bayesian-linear-regression)                  |
+| 2        | [Bayes Estimators](#week-2-bayes-estimators)                  |
 | 3        | [Bayesian Model Selection](#week-3-bayesian-model-choice)    |
 | 4        | [Classification](#week-4-convolutional-neural-networks)       |
 | 5        | [Variational Bayes](#week-5-sequence-modeling)                  |                       |
