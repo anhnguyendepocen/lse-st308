@@ -23,16 +23,16 @@
 
 | **Week** | **Topic**                            |
 |----------|--------------------------------------|
-| 1        | [Bayesian Inference Concepts](#week-1-bayesian-inference-concepts) |
-| 2        | [Bayes Estimators](#week-2-bayes-estimators)                  |
-| 3        | [Bayesian Model Selection](#week-3-bayesian-model-choice)    |
-| 4        | [Classification](#week-4-convolutional-neural-networks)       |
-| 5        | [Variational Bayes](#week-5-sequence-modeling)                  |                       |
-| 6        | [Graphical Models](#week-7-introduction-to-reinforcement-learning) |
-| 7        | [Mixture models and Clustering](#week-8-dynamic-programming-and-monte-carlo-methods) | 
-| 8        | [Sampling Methods](#week-9-temporal-difference-methods-and-eligibility-traces)|
-| 9        | [Sequential Data](#week-10-generalization-and-function-approximation) |
-| 10       | [Gaussian Processes](#week-11-policy-gradient-methods)           |
+| 1        | [Introduction / Conjugate Models](#week-1-introduction-/-conjugate-models) |
+| 2        | [Statistical Decision Theory / Point Estimation](#week-2-bayes-estimators)                  |
+| 3        | [Credible Intervals / Priors / Multiparameter models](#week-3-bayesian-model-choice)    |
+| 4        | [Hypothesis Testing / Prediction / Monte Carlo Simulation](#week-4-convolutional-neural-networks)       |
+| 5        | [Bayesian Linear Regression](#week-5-sequence-modeling)                  |                       |
+| 6        | [Bayesian Classification](#week-6-introduction-to-reinforcement-learning) |
+| 7        | [Markov Chain Monte Carlo](#week-7-dynamic-programming-and-monte-carlo-methods) | 
+| 8        | [Variational Bayes](#week-8-temporal-difference-methods-and-eligibility-traces)|
+| 9        | [Mixture models and the EM algorithm](#week-9-generalization-and-function-approximation) |
+| 10       | [Gaussian Processes](#week-10-policy-gradient-methods)           |
 
 ### Course Description
 
@@ -80,7 +80,7 @@ The final grade will be determined by the above with equal weights (**50-50\%**)
 ### Schedule
 
 ---
-#### Week 1. Bayesian Inference Concepts
+#### Week 1. Introduction / Conjugate Models
 
 [Lecture Slides](/LectureSlides/SlidesWeek01.pdf)
 
