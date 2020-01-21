@@ -24,8 +24,8 @@
 | **Week** | **Topic**                            |
 |----------|--------------------------------------|
 | 1        | [Introduction](#week-1-introduction) |
-| 2        | [Statistical Decision Theory, Point Estimation](#week-2-statistical-decision-theory-point-estimation)                 |
-| 3        | [Credible Intervals / Priors / Multiparameter models](#week-3-bayesian-model-choice)    |
+| 2        | [Statistical Decision Theory, Point Estimation](#week-2-statistical-decision-theory-point-estimation)|
+| 3        | [Credible Intervals, Priors, Multiparameter models](#week-3-credible-intervals-priors-multiparameter-models) |
 | 4        | [Hypothesis Testing / Prediction / Monte Carlo Simulation](#week-4-convolutional-neural-networks)       |
 | 5        | [Bayesian Linear Regression](#week-5-sequence-modeling)                  |                       |
 | 6        | [Bayesian Classification](#week-6-introduction-to-reinforcement-learning) |
@@ -125,7 +125,7 @@ The final grade will be determined by the above with equal weights (**50-50\%**)
  - Ridge regression
 
 ---
-#### Week 3. Bayesian Model Choice
+#### Week 3. Credible Intervals, Priors, Multiparameter models
 
 [Lecture Slides](/LectureSlides/SlidesWeek03.pdf)
 
