@@ -24,7 +24,7 @@
 | **Week** | **Topic**                            |
 |----------|--------------------------------------|
 | 1        | [Introduction](#week-1-introduction) |
-| 2        | [Statistical Decision Theory / Point Estimation](#week-2-bayes-estimators)                  |
+| 2        | [Statistical Decision Theory / Point Estimation](#week-2-statistical-decision-theory-point-estimation)                 |
 | 3        | [Credible Intervals / Priors / Multiparameter models](#week-3-bayesian-model-choice)    |
 | 4        | [Hypothesis Testing / Prediction / Monte Carlo Simulation](#week-4-convolutional-neural-networks)       |
 | 5        | [Bayesian Linear Regression](#week-5-sequence-modeling)                  |                       |
@@ -100,7 +100,7 @@ The final grade will be determined by the above with equal weights (**50-50\%**)
  - Bayesian Inference (Point and Interval Estimation, Forecasting) with Monte Carlo
 
 ---
-#### Week 2. Bayesian Linear Regression
+#### Week 2. Statistical Decision Theory / Point Estimation
 
 [Lecture Slides](/LectureSlides/SlidesWeek02.pdf)
 
