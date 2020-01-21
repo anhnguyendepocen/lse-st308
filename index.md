@@ -36,37 +36,41 @@
 
 ### Course Description
 
-The course sets up the foundations and covers the basic algorithms covered in probabilistic machine learning. Several techniques that are probabilistic in nature are introduced and standard topics are revisited from a Bayesian viewpoint. The module provides training in state-of-the-art methods that have been applied successfully for several tasks such as natural language processing, image recognition and fraud detection.
+**Statistical decision theory:** risk, decision rules, loss and utility functions, Bayesian expected loss, Frequentist risk.
 
-The first part of the module covers the basic concepts of Bayesian Inference such as prior and posterior distribution, Bayesian estimation,  model choice and forecasting. These concepts are also illustrated in real world applications modelled via linear models of regression and classification and compared with alternative approaches.
+**Bayesian Inference:** Bayes theorem, prior, posterior and predictive distributions, conjugate models (Normal-Normal, Poisson-Gamma, Beta-Binomial), Bayesian point estimation, credible intervals and hypothesis testing, Bayes factors and model selection. Comparison with Frequentist approaches.
 
-The second part of the module introduces and provides training in further topics of probabilistic machine learning such as Graphical models, mixtures and cluster analysis, Variational approximation, advanced Monte Carlo sampling methods, sequential data and Gaussian processes. All topics are illustrated via real-world examples and are contrasted against non-Bayesian approaches.
+**Implementation:** Asymptotic approximations (Laplace approximation, Variational Bayes, Monte Carlo methods), Markov Chain Monte Carlo (MCMC) simulation (Gibbs sampler, Metropolis-Hastings algorithm). Computer tools (R, Stan).
+
+**Applications:** Linear models in Regression and Classification (Bayesian Linear Regression, Generalized Linear Models, Logistic Regression), Cluster Analysis and Mixture Modeling, Hierarchical/ Multilevel Models.
 
 ### Prerequisites
 
-Basic knowledge in probability and first course in statistics such as ST202 or equivalent Probability Distribution Theory and Inference; basic knowledge of the principles of computer programming is sufficient (e.g. in any of Python, R, Matlab, C, Java). This is desired rather than essential. 
+Students must have completed Mathematical Methods (MA100) and Elementary Statistical Theory (ST102).
+
+ST202 is also recommended. 
 
 ### Reading
 
 Lecture slides will be **sufficient** for exam purposes but for optional further reading you can check the books below. 
 
- - [C. M. Bishop, Pattern Recognition and Machine Learning, Springer 2006](https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf)
- - [K. Murphy, Machine Learning: A Probabilistic Perspective, MIT Press, 2012](https://ebookcentral.proquest.com/lib/londonschoolecons/detail.action?docID=3339490)
- - D. Barber, Bayesian Reasoning and Machine Learning, Cambridge University Press 2012
- - S. Rogers and M. Girolami, A First Course in Machine Learning, Second Edition, Chapman and Hall/CRC, 2016
+ - J.K. Kruschke, Doing Bayesian Data Analysis. A tutorial with R, JAGS and Stan. 2nd edition.
+ - J.O. Berger, Statistical Decision Theory and Bayesian Analysis.
+ - D. Gamerman, H. F. Lopes, Markov Chain Monte Carlo: Stochastic Simulation for Bayesian Inference
+ - A. Gelman, Bayesian data analysis
  
- Specific sections are recommended on the sections from each week below.
+Specific sections are recommended on the sections from each week below.
 
 ### Software
 
-**Python** will be used throughout the course. You can either bring your laptop to the computer classes or use the computer room's PC. If you are using your laptop install [Anaconda (Python 3.7 version)](https://www.anaconda.com/download/)
+**R via RStudio** will be used throughout the course. You can either bring your laptop to the computer classes or use the computer room's PC. If you are using your laptop install the latest versions of [R](https://www.r-project.org), [RStudio](https://rstudio.com/products/rstudio/download/) and [RStan](https://github.com/stan-dev/rstan/wiki/RStan-Getting-Started)
 
 ### Formative coursework
 
-Problem sets will be assigned **each week**. They will include theoretical exercises as well as computer-based assignments. They will be **marked** and returned with **feedback**. Also the marks will appear on LSE FOR YOU.
+Problem sets will be assigned **each week**. They will include theoretical exercises as well as computer-based assignments. They will be **marked** and returned with **feedback**. Also the marks will appear on LSE For You.
 
 **Immportant Notes**
- - Submit your problem set in **Columbia House Box 34** 
+ - Submit your problem set in your **class** 
  - Write the **number of your class group** in the first page
 
 ### Assessment
@@ -75,7 +79,7 @@ An **individual** project will be assigned on **week 7** and will be **due Tuesd
 
 During summer term the course is assessed by a 2 hour **written exam**.
 
-The final grade will be determined by the above with equal weights (**50-50\%**)
+The final grade will be determined by the above with weights (**70\% exam - 30\% project**)
 
 ### Schedule
 
@@ -85,19 +89,15 @@ The final grade will be determined by the above with equal weights (**50-50\%**)
 [Lecture Slides](/LectureSlides/SlidesWeek01.pdf)
 
 *Topics covered in Lecture*: 
- - Machine Learning and Bayesian Inference
- - Bayes Estimators
- - Credible Intervals
- - Bayesian Forecasting
- - Bayesian Inference via Monte Carlo methods
+ - Bayes theorem, 
+ - Prior and posterior distributions, 
+ - Conjugate models (Normal-Normal, Poisson-Gamma, Beta-Binomial)
+ - Comparison with frequentist approaches
  
 *Further Reading (Optional)*:
- - Murphy, Sections 2.1-2.7, 5.2.1, 5.2.2, 6.6.1 and 6.6.2
+ - J.O. Berger, Sections: 1.1, 1.2, 4.1 and 4.2
+ - D. Gamerman, Sections: 2.1 2.2 and 2.3
 
-*Topics covered in Computer Class*: 
- - Introduction to Python, e.g.working with arrays, basic operation and plotting
- - Pseudo-Random numbers
- - Bayesian Inference (Point and Interval Estimation, Forecasting) with Monte Carlo
 
 ---
 #### Week 2. Statistical Decision Theory, Point Estimation
@@ -105,24 +105,15 @@ The final grade will be determined by the above with equal weights (**50-50\%**)
 [Lecture Slides](/LectureSlides/SlidesWeek02.pdf)
 
 *Topics covered in Lecture*: 
- - Bayesian Linear Regression
- - Ridge Regression
- - Lasso Regression
- - Predictive Distribution
+ - Statistical Decision Theory
+ - Loss, Action, Loss function
+ - Frequentist, Bayes and Posterior Risk
+ - Point Estimation
+ - Bayes Estimators
  
 *Further Reading (Optional)*:
- - Murphy, Sections: 1.7, 5.3.1, 5.3.3 ,5.7.1, 7.5, 7.6.1 and 7.6.2 
- - Bishop, Sections: 1.1, 3.1.1, 3.1.4, 3.3.1 and 3.3.2
+ - J.O. Berger, Sections: 1.3  1.5  2.4.1  2.4.2  4.3.1  4.4.1  and  4.4.2
 
-[Computer Class Notebook](/ComputerClasses/ComputerClass02.ipynb)
-
-*Topics covered in Computer Class*: 
- - Working with Pandas data frames
- - Working with 'for' loops in Python
- - Fitting linear regression models
- - Polynomial curve fitting
- - Introduction to training and test error concepts
- - Ridge regression
 
 ---
 #### Week 3. Credible Intervals, Priors, Multiparameter models
@@ -130,23 +121,14 @@ The final grade will be determined by the above with equal weights (**50-50\%**)
 [Lecture Slides](/LectureSlides/SlidesWeek03.pdf)
 
 *Topics covered in Lecture*: 
- - Bayesian inference for multiparameter models
- - Occam's razor
- - Lindley's paradox
- - Unit information priors
- - Training and Test error, Cross-Validation
+ - Confidence vs Credible Intervals
+ - Symmetric and Highest Density Region Sets
+ - Prior Elicitaion
+ - Jeffreys Prior
+ - Joint and Marginal Posteriors
  
 *Further Reading (Optional)*:
- - Murphy, Sections: 5.3 and 7.6 
- - Bishop, Sections: 2.3.6, 3.3.1, 3.3.2, 3.4, 3.5.1 and 3.5.2
+ - J.O. Berger, Sections: 3.3, 4.2 and 4.3.2
 
-[Computer Class Notebook](/ComputerClasses/ComputerClass03.ipynb)
-
-*Topics covered in Computer Class*: 
- - Creating your own function in Python
- - Performing matrix operations
- - Conducting full MLE analysis, with confidence intervals rather than just point estimates for the regression coefficients
- - Fitting Bayesian Linear Regression models and summarising the posterior of the regressions coefficients
- - Calculate the marginal likelihood / model evidence for linear regression models to perform Bayesian model selection
 
 ---
