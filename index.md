@@ -23,7 +23,7 @@
 
 | **Week** | **Topic**                            |
 |----------|--------------------------------------|
-| 1        | [Introduction/Conjugate Models](#week-1-introduction/conjugate-models) |
+| 1        | [Introduction](#week-1-introduction) |
 | 2        | [Statistical Decision Theory / Point Estimation](#week-2-bayes-estimators)                  |
 | 3        | [Credible Intervals / Priors / Multiparameter models](#week-3-bayesian-model-choice)    |
 | 4        | [Hypothesis Testing / Prediction / Monte Carlo Simulation](#week-4-convolutional-neural-networks)       |
@@ -80,7 +80,7 @@ The final grade will be determined by the above with equal weights (**50-50\%**)
 ### Schedule
 
 ---
-#### Week 1. Introduction/Conjugate Models
+#### Week 1. Introduction
 
 [Lecture Slides](/LectureSlides/SlidesWeek01.pdf)
 
@@ -93,8 +93,6 @@ The final grade will be determined by the above with equal weights (**50-50\%**)
  
 *Further Reading (Optional)*:
  - Murphy, Sections 2.1-2.7, 5.2.1, 5.2.2, 6.6.1 and 6.6.2
-
-[Computer Class Notebook](/ComputerClasses/ComputerClass01.ipynb)
 
 *Topics covered in Computer Class*: 
  - Introduction to Python, e.g.working with arrays, basic operation and plotting
