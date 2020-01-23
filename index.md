@@ -98,6 +98,7 @@ The final grade will be determined by the above with weights (**80\% exam - 20\%
 *Further Reading (Optional)*:
  - J.O. Berger, Sections: 1.1, 1.2, 4.1 and 4.2
  - D. Gamerman, Sections: 2.1 2.2 and 2.3
+ - [How Turing and Bayes cracked the enigma code](https://www.statslife.org.uk/history-of-stats-science/1909-how-turing-and-bayes-cracked-the-enigma-code)
 
 
 ---
