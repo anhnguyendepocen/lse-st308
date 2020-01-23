@@ -58,6 +58,7 @@ Lecture slides will be **sufficient** for exam purposes but for optional further
  - J.O. Berger, Statistical Decision Theory and Bayesian Analysis.
  - D. Gamerman, H. F. Lopes, Markov Chain Monte Carlo: Stochastic Simulation for Bayesian Inference
  - A. Gelman, Bayesian data analysis
+ - C. Robert, The Bayesian Choice
  
 Specific sections are recommended on the sections from each week below.
 
