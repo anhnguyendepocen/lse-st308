@@ -80,7 +80,7 @@ An **individual** project will be assigned on **week 7** and will be **due Tuesd
 
 During summer term the course is assessed by a 2 hour **written exam**.
 
-The final grade will be determined by the above with weights (**70\% exam - 30\% project**)
+The final grade will be determined by the above with weights (**80\% exam - 20\% project**)
 
 ### Schedule
 
