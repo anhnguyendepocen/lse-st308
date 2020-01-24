@@ -13,7 +13,7 @@
 
 ### Course Information
 
-- **Lectures** on Fridays 10:00–12:00 in NAB.2.04 (except week 6 which is NAB.LG.01).
+- **Lectures** on Fridays 10:00–12:00 in CLM.3.02
 - **Seminars / Computer Classes** there are 3 groups: 
   1. Thursdays 13:00–14:00 in STC.S08 (most of the times) taught by Phil Chan
   2. Thursdays 14:00-15:00 in STC.S08 (most of the times) taught by Phil Chan
