@@ -116,6 +116,14 @@ The final grade will be determined by the above with weights (**80\% exam - 20\%
 *Further Reading (Optional)*:
  - J.O. Berger, Sections: 1.3  1.5  2.4.1  2.4.2  4.3.1  4.4.1  and  4.4.2
 
+*Topics covered in Computer Class
+ - Basic commands for vectors and matrices in R
+ - Data visualisation in R
+ - Loading data in R
+ 
+[Computer Class Notebook](/ComputerClasses/ST308-Week2.Rmd)
+
+[Data File for the Computer Class](/ComputerClasses/auto.data.txt)
 
 ---
 #### Week 3. Credible Intervals, Priors, Multiparameter models
