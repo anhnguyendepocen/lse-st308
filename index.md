@@ -121,9 +121,9 @@ The final grade will be determined by the above with weights (**80\% exam - 20\%
  - Data visualisation in R
  - Loading data in R
  
-[Computer Class Notebook](/ComputerClasses/ST308-Week2.Rmd)
+[Computer Class Notebook](/ComputerClasses/ST308_Week2.Rmd)
 
-[Data File for the Computer Class](/ComputerClasses/auto.data.txt)
+[Data File for the Computer Class](/ComputerClasses/auto_data.txt)
 
 ---
 #### Week 3. Credible Intervals, Priors, Multiparameter models
