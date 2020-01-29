@@ -123,7 +123,7 @@ The final grade will be determined by the above with weights (**80\% exam - 20\%
  
 [Computer Class Notebook](/ComputerClasses/ST308_Week2.Rmd)
 
-[Data File for the Computer Class](/ComputerClasses/auto.txt)
+[Data File for the Computer Class](/ComputerClasses/Auto.txt)
 
 ---
 #### Week 3. Credible Intervals, Priors, Multiparameter models
