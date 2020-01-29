@@ -194,7 +194,7 @@ Data sets may have variables with missing values. Here, `na.strings=?` sets anyt
 Load the data and check all us ok using `head`:
 
 ```{r}
-Auto <- read.table("Auto.data.txt", header=T,na.strings="?")
+Auto <- read.table("Auto.txt", header=T,na.strings="?")
 head(Auto)
 ```
 
