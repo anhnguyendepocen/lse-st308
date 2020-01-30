@@ -8,7 +8,7 @@
 
 ### Teaching Assistants
 * Phil Chan, [email](mailto:p.chan@lse.ac.uk), Department of Statistics.
-* Patrick Ascermayr [email](mailto:p.aschermayr@lse.ac.uk), Department of Statistics  
+* Patrick Aschermayr [email](mailto:p.aschermayr@lse.ac.uk), Department of Statistics  
 
 
 ### Course Information
@@ -17,7 +17,7 @@
 - **Seminars / Computer Classes** there are 3 groups: 
   1. Thursdays 13:00–14:00 in STC.S08 (most of the times) taught by Phil Chan
   2. Thursdays 14:00-15:00 in STC.S08 (most of the times) taught by Phil Chan
-  3. Fridays 15:00-16:00 in FAW.4.02 (all of the times) taught by Patrick Aschermayr
+  3. Fridays 13:00-14:00 in FAW.4.02 (all of the times) taught by Patrick Aschermayr
  
  There will be **no reading week**, hence teaching will be concluded on week 10. 
 
