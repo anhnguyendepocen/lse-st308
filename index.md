@@ -123,6 +123,8 @@ The final grade will be determined by the above with weights (**80\% exam - 20\%
  
 [Computer Class Notebook](/ComputerClasses/ComputerClass02.Rmd)
 
+[Computer Class Notebook with code for the activities](/ComputerClasses/ComputerClass02_CodeActivities.Rmd)
+
 [Data File for the Computer Class](/ComputerClasses/Auto.txt)
 
 ---
