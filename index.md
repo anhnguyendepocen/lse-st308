@@ -149,14 +149,15 @@ The final grade will be determined by the above with weights (**80\% exam - 20\%
 [Lecture Slides](/LectureSlides/SlidesWeek04.pdf)
 
 *Topics covered in Lecture*: 
- - Confidence vs Credible Intervals
- - Symmetric and Highest Density Region Sets
- - Prior Elicitaion
- - Jeffreys Prior
- - Joint and Marginal Posteriors
+ - Bayes factors 
+ - Lindley's paradox
+ - Unit information prior
+ - Predictive distribution
+ - Bayesian Inference using Monte Carlo
  
 *Further Reading (Optional)*:
- - J.O. Berger, Sections: 3.3, 4.2 and 4.3.2
+ - J.O. Berger, Sections: 2.4.4, 2.4.4, 4.3.3, 4.3.4 and 4.4.3
+ - Gamerman and Lopes, Sections: 3.1 3.2.1 3.2.2 3.4 5.1 and 5.2
 
 
 ---
