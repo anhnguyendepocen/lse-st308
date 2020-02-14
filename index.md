@@ -27,7 +27,7 @@
 | 2        | [Statistical Decision Theory, Point Estimation](#week-2-statistical-decision-theory-point-estimation)|
 | 3        | [Credible Intervals, Priors, Multiparameter models](#week-3-credible-intervals-priors-multiparameter-models) |
 | 4        | [Hypothesis Testing / Prediction / Monte Carlo Integration](#week-4-hypothesis-testing-prediction-monte-carlo-integration)       |
-| 5        | [Bayesian Linear Regression](#week-5-sequence-modeling)                  |                       |
+| 5        | [Bayesian Linear Regression](#week-5-bayesian-linear-regression)                  |                       |
 | 6        | [Bayesian Classification](#week-6-introduction-to-reinforcement-learning) |
 | 7        | [Markov Chain Monte Carlo](#week-7-dynamic-programming-and-monte-carlo-methods) | 
 | 8        | [Variational Bayes](#week-8-temporal-difference-methods-and-eligibility-traces)|
@@ -57,7 +57,7 @@ Lecture slides will be **sufficient** for exam purposes but for optional further
  - J.K. Kruschke, Doing Bayesian Data Analysis. A tutorial with R, JAGS and Stan. 2nd edition.
  - J.O. Berger, Statistical Decision Theory and Bayesian Analysis.
  - D. Gamerman, H. F. Lopes, Markov Chain Monte Carlo: Stochastic Simulation for Bayesian Inference
- - A. Gelman, Bayesian data analysis
+ - A. Gelman *et al*, Bayesian data analysis
  - C. Robert, The Bayesian Choice
  
 Specific sections are recommended on the sections from each week below.
@@ -159,5 +159,23 @@ The final grade will be determined by the above with weights (**80\% exam - 20\%
  - J.O. Berger, Sections: 2.4.4, 2.4.4, 4.3.3, 4.3.4 and 4.4.3
  - Gamerman and Lopes, Sections: 3.1 3.2.1 3.2.2 3.4 5.1 and 5.2
 
+---
+
+#### Week 5. Bayesian Linear Regression
+
+[Lecture Slides](/LectureSlides/SlidesWeek05.pdf)
+
+*Topics covered in Lecture*: 
+ - Interpretation of coefficients 
+ - linear Basis functions
+ - Least Squares / Maximum Likelihood estimator
+ - Overfit
+ - Ridge and Lasso Regression 
+ - Prediction
+ - Model Choice
+ 
+*Further Reading (Optional)*:
+ - Gelman *et al*, Chapter 14
 
 ---
+
