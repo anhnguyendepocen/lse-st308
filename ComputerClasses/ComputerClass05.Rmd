@@ -1,0 +1,142 @@
+---
+title: "ST308 - week 05"
+output: html_document
+---
+
+# 1. Generating random numbers from distributions
+
+The following commands can be used to generate from various distributions
+
+Uniform: `runif(n, min=0, max=1)`
+
+Normal: `rnorm(n, mean = 0, sd = 1)`
+
+Beta: `rbeta(n, shape1, shape2)`
+
+Gamma / chi-square / Exponential: `rgamma(n, shape, rate = 1)` Note: scale = 1/rate rpois(n, lambda)
+
+Binomial/Bernoulli: `rbinom(n, size, prob)`
+
+Negative Binomial: `rnbinom(n, size, prob)`
+
+Poisson: rpois(n,lambda)
+
+Probability density/mass functions, Cumulative density functions and quantile functions are also available. Check the result of
+
+```{r}
+dnorm(0) 
+dnorm(0)*sqrt(2*pi)
+qnorm(0.975) 
+pnorm(1.96)
+```
+
+
+## Monte Carlo calculations in the case of Uniform(0,1)
+
+Generate 20 points from the Uniform(0,1) distribution. Calculate the sample mean, median, variance and provide a 95% interval by computing the 2.5% and 97.5% percentiles. Repeat with 10000 points and compare the results with the true values of the calculated quantities. 
+
+The true values are mean$=0.5$, median$=0.5$, and variance $=1/12=0.08333333$. 
+
+The support is defined by the two parameters, a=0 and b=1, which are its minimum and maximum values.
+
+
+```{r}
+x=runif(10)
+summary(x)
+var(x)
+
+x=runif(10^4)
+summary(x)
+var(x)
+```
+
+
+## Activity 1
+
+Repeat with a different distribution.
+
+### Put your code below
+
+
+# 2. Density estimation
+
+The simplest way to estimate the pdf of a continuous random variable is with a histogram. For example suppose that we are observing a sample of independent random variables from the standard normal N(0,1) distribution. How will the histogram look like?
+
+```{r}
+n=100
+y=rnorm(n)
+hist(y,freq = FALSE)
+hist(y,col=2, freq= FALSE)
+```
+
+This may look too much like the pdf of the N(0,1) but let's try it again with a bigger sample size and more breaks in the histogram
+
+```{r}
+n=10000
+y=rnorm(n)
+hist(y,col=2,breaks=100,freq = FALSE)
+```
+
+It seems a bit better but the problem is that histogram is a step function and we are trying to estimate a smooth curve. Kernel density estimators are more suitable for this task. The command required is `density()`. Below we also overlay the true pdf (purple line) of the N(0,1) which can be obtains by the R command `dnorm()` 
+
+```{r}
+n=10000
+y=rnorm(n)
+d = density(y)
+plot(d, main="Kernel Density of y")
+polygon(d, col="red", border="blue")
+x=seq(-3,3,length=1000)
+lines(x,dnorm(x),col='purple')
+```
+
+## Activity 2
+
+Repeat with a different distribution
+
+### Put your code below
+
+# 3. Point Estimation / Confidence Intervals
+
+## Frequentist Estimation and Confidence Intervals 
+
+Suppose that we observe a single observation $y=98$ from the $N(\theta,80)$ distribution. Find the MLE and provide a $95\%$ confidence interval for $\theta$.
+
+Solution:
+
+The MLE of theta is just y=98.
+
+For 95% confidence intervals use the following code
+```{r}
+y=98
+c(y-1.96*sqrt(80)/sqrt(1),y+1.96*sqrt(80)/sqrt(1))
+
+```
+
+## Bayesian Estimation and Credible Intervals
+
+We also conduct Bayesian Inference based on the prior N($110, 120$) which results in the posterior becomes N($102.8, 48$). Provide a Bayes estimator and a 95$\%$ credible interval for $\theta$.
+
+Solution:
+
+Bayes estimators corresponding to posterior mean, median and mode all give mupost$=102.8$.
+
+For a 95$\%$ credible use:
+```{r}
+mupost = 102.8
+sdpost = sqrt(48)
+qnorm(c(0.025,0.975), mupost,sdpost )
+```
+
+or else with Monte Carlo:
+
+```{r}
+N=100000
+x=rnorm(N,mupost,sdpost)
+quantile(x,probs=c(0.025,0.975))
+```
+
+## Activity 3
+
+Suppose that the posterior a parameter $\theta$ is the Beta($5,7$) distribution. Provide a Bayes estimator and a 95$/%$ credible interval for $\theta$.
+
+### Put your code below
