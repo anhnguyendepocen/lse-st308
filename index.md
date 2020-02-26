@@ -159,6 +159,8 @@ The final grade will be determined by the above with weights (**80\% exam - 20\%
  - J.O. Berger, Sections: 2.4.4, 2.4.4, 4.3.3, 4.3.4 and 4.4.3
  - Gamerman and Lopes, Sections: 3.1 3.2.1 3.2.2 3.4 5.1 and 5.2
 
+[Computer Class Notebook](/ComputerClasses/ComputerClass05.Rmd)
+
 ---
 
 #### Week 5. Bayesian Linear Regression
@@ -177,7 +179,26 @@ The final grade will be determined by the above with weights (**80\% exam - 20\%
 *Further Reading (Optional)*:
  - Gelman *et al*, Chapter 14
 
-[Computer Class Notebook](/ComputerClasses/ComputerClass05.Rmd)
+[Computer Class Notebook](/ComputerClasses/ComputerClass06.Rmd)
 
 ---
 
+#### Week 6. Bayesian Classification
+
+[Lecture Slides](/LectureSlides/SlidesWeek06.pdf)
+
+*Topics covered in Lecture*: 
+ - Discriminative and Generative Models 
+ - Logistic Regression with Maximum Likelihood
+ - Newton-Raphson Algorithm
+ - Bayesian Central Limit Theorem
+ - Bayesian Logistic Regression
+ - Linear and Quadratic Discriminant Analysis
+ - Assessing Predictions in Classification
+ 
+*Further Reading (Optional)*:
+ - Gelman *et al*, Sections 16.1, 16.2 and 16.3
+
+[Computer Class Notebook](/ComputerClasses/ComputerClass06.Rmd)
+
+---
