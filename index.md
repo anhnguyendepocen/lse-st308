@@ -193,7 +193,7 @@ The final grade will be determined by the above with weights (**80\% exam - 20\%
  - Newton-Raphson Algorithm
  - Bayesian Central Limit Theorem
  - Bayesian Logistic Regression
- - Linear and Quadratic Discriminant Analysis
+ - Linear Discriminant Analysis
  - Assessing Predictions in Classification
  
 *Further Reading (Optional)*:
