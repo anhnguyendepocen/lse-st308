@@ -28,7 +28,7 @@
 | 3        | [Credible Intervals, Priors, Multiparameter models](#week-3-credible-intervals-priors-multiparameter-models) |
 | 4        | [Hypothesis Testing / Prediction / Monte Carlo Integration](#week-4-hypothesis-testing-prediction-monte-carlo-integration)       |
 | 5        | [Bayesian Linear Regression](#week-5-bayesian-linear-regression)                  |                       |
-| 6        | [Bayesian Classification](#week-6-introduction-to-reinforcement-learning) |
+| 6        | [Bayesian Classification](#week-6-bayesian-classification) |
 | 7        | [Markov Chain Monte Carlo](#week-7-dynamic-programming-and-monte-carlo-methods) | 
 | 8        | [Variational Bayes](#week-8-temporal-difference-methods-and-eligibility-traces)|
 | 9        | [Mixture models and the EM algorithm](#week-9-generalization-and-function-approximation) |
