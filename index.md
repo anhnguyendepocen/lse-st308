@@ -199,6 +199,5 @@ The final grade will be determined by the above with weights (**80\% exam - 20\%
 *Further Reading (Optional)*:
  - Gelman *et al*, Sections 16.1, 16.2 and 16.3
 
-[Computer Class Notebook](/ComputerClasses/ComputerClass06.Rmd)
 
 ---
