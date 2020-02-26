@@ -1,0 +1,149 @@
+---
+title: "ST308-week06"
+output: html_document
+---
+
+
+You will need to load the core library for the course textbook:
+```{r}
+library(ISLR)
+```
+
+
+# Demonstration 
+
+In this exercise, we will predict the number of applications received using the other variables in the `College` data set.
+
+(a) Split the data set into a training set and a test set.
+
+**Load and split the `College` data.**
+
+```{r}
+library(ISLR)
+set.seed(11)
+sum(is.na(College))
+train.size <-  nrow(College) / 2
+train <-  sample(1:nrow(College), train.size)
+test <-  -train
+College.train <-  College[train, ]
+College.test <-  College[test, ]
+```
+
+(b) Fit a linear model using least squares on the training set, and
+report the test error obtained. Select the model based on either the 
+
+**Number of applications is the Apps variable.**
+```{r}
+lm.fit <-  lm(Apps ~ . , data = College.train)
+lm.pred <-  predict(lm.fit, College.test)
+mean((College.test[, "Apps"] - lm.pred)^2)
+```
+
+**Test RSS is 1538442**
+
+Check the regression coefficients
+
+```{r}
+summary(lm.fit)
+```
+(c) Fit a ridge regression model on the training set, with $\lambda$ chosen by cross-validation. Report the test error obtained.
+
+**Pick $\lambda$ using College.train and report error on College.test**
+
+```{r}
+library(glmnet)
+set.seed(1)
+train.mat <-  model.matrix(Apps ~ . , data = College.train)
+test.mat <-  model.matrix(Apps ~ . , data = College.test)
+grid <-  10 ^ seq(4, -2, length = 100)
+mod.ridge <-  cv.glmnet(train.mat, College.train[, "Apps"], 
+                        alpha = 0, lambda = grid, thresh = 1e-12)
+lambda.best <-  mod.ridge$lambda.min
+lambda.best
+ridge.pred <-  predict(mod.ridge, newx = test.mat, s = lambda.best)
+mean((College.test[, "Apps"] - ridge.pred)^2)
+```
+**Test RSS is slightly higher than OLS, 1608859.**
+
+Check the ridge regression coefficients
+
+```{r}
+mod.ridge <-  glmnet(model.matrix(Apps ~ . , data = College), 
+                     College[, "Apps"], alpha = 1,lambda=lambda.best)
+predict(mod.ridge, s = lambda.best, type = "coefficients")
+```
+
+(d) Fit a lasso model on the training set, with $\lambda$ chosen by cross-validation. Report the test error obtained, along with the number of non-zero coefficient estimates.
+
+**Pick $\lambda$ using College.train and report error on College.test.**
+```{r}
+set.seed(1)
+mod.lasso <-  cv.glmnet(train.mat, College.train[, "Apps"], 
+                        alpha = 1, lambda = grid, thresh = 1e-12)
+lambda.best <-  mod.lasso$lambda.min
+lambda.best
+lasso.pred <-  predict(mod.lasso, newx = test.mat, s = lambda.best)
+mean((College.test[, "Apps"] - lasso.pred)^2)
+```
+**Again, Test RSS is slightly higher than OLS, 1630061.**
+
+**The Lasso coefficients look like**
+```{r}
+mod.lasso <-  glmnet(model.matrix(Apps ~ . , data = College), 
+                     College[, "Apps"], alpha = 1)
+predict(mod.lasso, s = lambda.best, type = "coefficients")
+```
+
+
+## Activity
+
+We will now try to predict per capita crime rate in the `Boston` data set.
+
+
+```{r}
+set.seed(1)
+library(MASS)
+train.size <-  nrow(Boston) / 2
+train <-  sample(1:nrow(Boston), train.size)
+test <-  -train
+Boston.train <-  Boston[train, ]
+Boston.test <-  Boston[test, ]
+lm.fit <-  lm(medv ~ . , data = Boston.train)
+lm.pred <-  predict(lm.fit, Boston.test)
+mean((Boston.test[, "medv"] - lm.pred)^2)
+summary(lm.fit)
+```
+
+Repeat the previous tasks
+
+**Ridge Regression**
+
+```{r}
+set.seed(2)
+train <-  model.matrix(medv ~ . , data = Boston.train)
+test <-  model.matrix(medv ~ . , data = Boston.test)
+grid <-  10 ^ seq(4, -2, length = 100)
+mod.ridge <-  cv.glmnet(train, Boston.train[, "medv"], 
+                        alpha = 0, lambda = grid, thresh = 1e-12)
+lambda.best <-  mod.ridge$lambda.min
+lambda.best
+ridge.pred <-  predict(mod.ridge, newx = test, s = lambda.best)
+mean((Boston.test[, "medv"] - ridge.pred)^2)
+mod.ridge <-  glmnet(model.matrix(medv ~ . , data = Boston.train), 
+                     Boston.train[, "medv"], alpha = 1,lambda=lambda.best)
+predict(mod.ridge, s = lambda.best, type = "coefficients")
+```
+
+**Lasso**
+```{r}
+set.seed(3)
+mod.lasso <-  cv.glmnet(train, Boston.train[, "medv"], 
+                        alpha = 1, lambda = grid, thresh = 1e-12)
+lambda.best <-  mod.lasso$lambda.min
+lambda.best
+lasso.pred <-  predict(mod.lasso, newx = test, s = lambda.best)
+mean((Boston.test[, "medv"] - lasso.pred)^2)
+mod.rlasso <-  glmnet(model.matrix(medv ~ . , data = Boston.train), 
+                     Boston.train[, "medv"], alpha = 1,lambda=lambda.best)
+predict(mod.lasso, s = lambda.best, type = "coefficients")
+```
