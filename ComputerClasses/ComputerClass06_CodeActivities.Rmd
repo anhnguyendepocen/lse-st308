@@ -69,7 +69,7 @@ Check the ridge regression coefficients
 
 ```{r}
 mod.ridge <-  glmnet(model.matrix(Apps ~ . , data = College), 
-                     College[, "Apps"], alpha = 1,lambda=lambda.best)
+                     College[, "Apps"], alpha = 0,lambda=lambda.best)
 predict(mod.ridge, s = lambda.best, type = "coefficients")
 ```
 
@@ -130,7 +130,7 @@ lambda.best
 ridge.pred <-  predict(mod.ridge, newx = test, s = lambda.best)
 mean((Boston.test[, "medv"] - ridge.pred)^2)
 mod.ridge <-  glmnet(model.matrix(medv ~ . , data = Boston.train), 
-                     Boston.train[, "medv"], alpha = 1,lambda=lambda.best)
+                     Boston.train[, "medv"], alpha = 0,lambda=lambda.best)
 predict(mod.ridge, s = lambda.best, type = "coefficients")
 ```
 
