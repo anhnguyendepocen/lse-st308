@@ -161,6 +161,8 @@ The final grade will be determined by the above with weights (**80\% exam - 20\%
 
 [Computer Class Notebook](/ComputerClasses/ComputerClass05.Rmd)
 
+[Computer Class Notebook with code for the activities](/ComputerClasses/ComputerClass05_CodeActivities.Rmd)
+
 ---
 
 #### Week 5. Bayesian Linear Regression
@@ -180,6 +182,8 @@ The final grade will be determined by the above with weights (**80\% exam - 20\%
  - Gelman *et al*, Chapter 14
 
 [Computer Class Notebook](/ComputerClasses/ComputerClass06.Rmd)
+
+[Computer Class Notebook with code for the activities](/ComputerClasses/ComputerClass06_CodeActivities.Rmd)
 
 ---
 
