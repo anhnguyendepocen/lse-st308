@@ -1,0 +1,87 @@
+---
+title: "ST308-classification"
+output: html_document
+---
+ 
+You will need to load the core library for the course textbook:
+```{r}
+library(ISLR)
+```
+
+
+## Demonstration
+
+In this problem, you will develop a model to predict whether a given car gets high or low gas mileage based on the `Auto` dataset from the `ISLR` package.
+
+(a) Create a binary variable, `mpg01`, that contains a 1 if `mpg` contains a value above its median, and a 0 if `mpg` contains a value below its median. You can compute the median using the `median()` function. Note you may find it helpful to use the `data.frame()` function to create a single data set containing both `mpg01` and the other `Auto` variables.
+
+```{r}
+library(ISLR)
+summary(Auto)
+attach(Auto)
+mpg01 <-  rep(0, length(mpg))
+mpg01[mpg>median(mpg)] <- 1
+Auto <- data.frame(Auto, mpg01)
+```
+
+
+(b) Split the data into a training set and a test set.
+
+```{r}
+train <-  (year %% 2 == 0) # if the year is even
+test <-  !train
+Auto.train <-  Auto[train,]
+Auto.test <-  Auto[test,]
+mpg01.test <-  mpg01[test]
+```
+
+(c) Perform LDA on the training data in order to predict `mpg01` using the variables that seemed most associated with `mpg01` in (b). What is the test error of the model obtained?
+
+```{r}
+# LDA
+library(MASS)
+lda.fit <-  lda(mpg01 ~ cylinders + weight + displacement + horsepower,
+              data = Auto, subset = train)
+lda.pred <-  predict(lda.fit, Auto.test)
+mean(lda.pred$class != mpg01.test)
+```
+
+(d) Perform logistic regression on the training data in order to predict `mpg01` using the variables that seemed most associated with `mpg01` in (b). What is the test error of the model obtained?
+
+```{r}
+# Logistic regression
+glm.fit <-  glm(mpg01 ~ cylinders + weight + displacement + horsepower,
+              data = Auto,
+              family = binomial,
+              subset = train)
+glm.probs <-  predict(glm.fit, Auto.test, type = "response")
+glm.pred <-  rep(0, length(glm.probs))
+glm.pred[glm.probs > 0.5] <- 1
+mean(glm.pred != mpg01.test)
+```
+
+#Activity 
+
+Repeat the above for the Stock market data in the ISLR package
+
+```{r}
+library (ISLR)
+names(Smarket )
+dim(Smarket )
+summary(Smarket )
+```
+
+Split into train and test data
+
+```{r}
+train =(Year <2005)
+Smarket.2005= Smarket [! train ,]
+dim(Smarket.2005)
+Direction.2005= Direction [! train]
+```
+
+Fit LDA and logistic regression models to the train dataset and evaluate their predictons in the test dataset. Fit LDA and logistic regression models to the train dataset and evaluate their predictons in the test dataset. Try to find a model based on some of the covariates such that it has as good accuracy rate as possible.
+ 
+
+Put your code below:
+
