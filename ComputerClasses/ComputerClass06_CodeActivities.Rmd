@@ -39,8 +39,6 @@ lm.pred <-  predict(lm.fit, College.test)
 mean((College.test[, "Apps"] - lm.pred)^2)
 ```
 
-**Test RSS is 1538442**
-
 Check the regression coefficients
 
 ```{r}
@@ -63,7 +61,6 @@ lambda.best
 ridge.pred <-  predict(mod.ridge, newx = test.mat, s = lambda.best)
 mean((College.test[, "Apps"] - ridge.pred)^2)
 ```
-
 
 Check the ridge regression coefficients
 
@@ -116,3 +113,34 @@ summary(lm.fit)
 
 Repeat the previous tasks
 
+**Ridge Regression**
+
+```{r}
+set.seed(2)
+train <-  model.matrix(medv ~ . , data = Boston.train)
+test <-  model.matrix(medv ~ . , data = Boston.test)
+grid <-  10 ^ seq(4, -2, length = 100)
+mod.ridge <-  cv.glmnet(train, Boston.train[, "medv"], 
+                        alpha = 0, lambda = grid, thresh = 1e-12)
+lambda.best <-  mod.ridge$lambda.min
+lambda.best
+ridge.pred <-  predict(mod.ridge, newx = test, s = lambda.best)
+mean((Boston.test[, "medv"] - ridge.pred)^2)
+mod.ridge <-  glmnet(model.matrix(medv ~ . , data = Boston.train), 
+                     Boston.train[, "medv"], alpha = 0,lambda=lambda.best)
+predict(mod.ridge, s = lambda.best, type = "coefficients")
+```
+
+**Lasso**
+```{r}
+set.seed(3)
+mod.lasso <-  cv.glmnet(train, Boston.train[, "medv"], 
+                        alpha = 1, lambda = grid, thresh = 1e-12)
+lambda.best <-  mod.lasso$lambda.min
+lambda.best
+lasso.pred <-  predict(mod.lasso, newx = test, s = lambda.best)
+mean((Boston.test[, "medv"] - lasso.pred)^2)
+mod.rlasso <-  glmnet(model.matrix(medv ~ . , data = Boston.train), 
+                     Boston.train[, "medv"], alpha = 1,lambda=lambda.best)
+predict(mod.lasso, s = lambda.best, type = "coefficients")
+```
