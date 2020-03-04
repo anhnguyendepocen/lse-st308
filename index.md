@@ -29,7 +29,7 @@
 | 4        | [Hypothesis Testing / Prediction / Monte Carlo Integration](#week-4-hypothesis-testing-prediction-monte-carlo-integration)       |
 | 5        | [Bayesian Linear Regression](#week-5-bayesian-linear-regression)                  |                       |
 | 6        | [Bayesian Classification](#week-6-bayesian-classification) |
-| 7        | [Markov Chain Monte Carlo](#week-7-dynamic-programming-and-monte-carlo-methods) | 
+| 7        | [Markov Chain Monte Carlo](#week-7-markov-chain-monte-carlo) | 
 | 8        | [Variational Bayes](#week-8-temporal-difference-methods-and-eligibility-traces)|
 | 9        | [Mixture models and the EM algorithm](#week-9-generalization-and-function-approximation) |
 | 10       | [Gaussian Processes](#week-10-policy-gradient-methods)           |
@@ -203,7 +203,23 @@ The final grade will be determined by the above with weights (**80\% exam - 20\%
 *Further Reading (Optional)*:
  - Gelman *et al*, Sections 16.1, 16.2 and 16.3
 
-
 [Computer Class Notebook](/ComputerClasses/ComputerClassClassification.Rmd)
+
+---
+
+#### Week 7. Markov Chain Monte Carlo
+
+[Lecture Slides](/LectureSlides/SlidesWeek07.pdf)
+
+*Topics covered in Lecture*: 
+ - Hierarchical / Multi-level / Panel data models 
+ - Markov Chains
+ - Metropolis-Hastings Algorithm 
+ - Gibbs Sampler
+ - Hamiltonian MCMC
+
+*Further Reading (Optional)*:
+ - Gammerman, mainly Sections 5.1, 5.2 although the entire chapters 4, 5 are relevant
+
 
 ---
