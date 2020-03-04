@@ -30,9 +30,9 @@
 | 5        | [Bayesian Linear Regression](#week-5-bayesian-linear-regression)                  |                       |
 | 6        | [Bayesian Classification](#week-6-bayesian-classification) |
 | 7        | [Markov Chain Monte Carlo](#week-7-markov-chain-monte-carlo) | 
-| 8        | [Variational Bayes](#week-8-temporal-difference-methods-and-eligibility-traces)|
-| 9        | [Mixture models and the EM algorithm](#week-9-generalization-and-function-approximation) |
-| 10       | [Gaussian Processes](#week-10-policy-gradient-methods)           |
+| 8        | [Mixture models and the EM algorithm](#week-8-mixture-models-and-the-em-algorithm)|
+| 9        | [Gaussian Processes](#week-9-generalization-and-function-approximation) |
+| 10       | [Variational Bayes](#week-10-policy-gradient-methods)           |
 
 ### Course Description
 
