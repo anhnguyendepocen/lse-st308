@@ -219,7 +219,7 @@ The final grade will be determined by the above with weights (**80\% exam - 20\%
  - Hamiltonian MCMC
 
 *Further Reading (Optional)*:
- - Gammerman, mainly Sections 5.1, 5.2 although the entire chapters 4, 5 are relevant
+ - Gammerman and Lopes, mainly Sections 5.1, 5.2 although the entire chapters 4, 5 are relevant
 
 
 ---
