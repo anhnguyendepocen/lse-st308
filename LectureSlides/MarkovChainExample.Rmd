@@ -22,8 +22,6 @@ Xa[1]=Xa0			#Set the first entry of the vector to Xa0
 for (i in 1:N){
 Xa[i+1]=rnorm(1,0.5*Xa[i],1)
 }
-
-plot(Xa,type="l")
 ```
 
 
@@ -38,7 +36,6 @@ Xb[1]=Xb0			#Set the first entry of the vector to Xa0
 for (i in 1:N){
 Xb[i+1]=rnorm(1,0.5*Xb[i],1)
 }
-plot(Xb,type="l")
 ```
 
 Finally we will draw independent samples from the stationary distribution which is known in this case (now always true) to be the N$(0,1.333)$ distribution. We will compare these three sets of draws with graphs and summaries
