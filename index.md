@@ -217,6 +217,8 @@ The final grade will be determined by the above with weights (**80\% exam - 20\%
  - Metropolis-Hastings Algorithm 
  - Gibbs Sampler
  - Hamiltonian MCMC
+ 
+ [R demonstration of a Markov Chain](/LectureSlides/MarkovChainExample.Rmd)
 
 *Further Reading (Optional)*:
  - Gammerman and Lopes, mainly Sections 5.1, 5.2 although the entire chapters 4, 5 are relevant
