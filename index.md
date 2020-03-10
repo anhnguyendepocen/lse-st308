@@ -205,6 +205,8 @@ The final grade will be determined by the above with weights (**80\% exam - 20\%
 
 [Computer Class Notebook](/ComputerClasses/ComputerClassClassification.Rmd)
 
+[Computer Class Notebook with code for the activities](/ComputerClasses/ComputerClassClassification_CodeActivities.Rmd)
+
 ---
 
 #### Week 7. Markov Chain Monte Carlo
