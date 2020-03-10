@@ -223,5 +223,8 @@ The final grade will be determined by the above with weights (**80\% exam - 20\%
 *Further Reading (Optional)*:
  - Gammerman and Lopes, mainly Sections 5.1, 5.2 although the entire chapters 4, 5 are relevant
 
+[Computer Class Notebook](/ComputerClasses/ComputerClassMCMC_pt1.Rmd)
+
+[Stan file for the Computer Class](/ComputerClasses/ToyExample.stan)
 
 ---
