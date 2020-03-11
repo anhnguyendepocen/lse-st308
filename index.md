@@ -221,6 +221,12 @@ The final grade will be determined by the above with weights (**80\% exam - 20\%
  - Hamiltonian MCMC
  
  [R demonstration of a Markov Chain](/LectureSlides/MarkovChainExample.Rmd)
+ 
+ [Using MCMC for Radon data](/LectureSlides/RadonMultilevelExampleStan.html)
+ 
+ [Radon data](/LectureSlides/radon.csv)
+ 
+ [Stan file for Radon data MCMC](/LectureSlides/RadonMultilevel.stan)
 
 *Further Reading (Optional)*:
  - Gammerman and Lopes, mainly Sections 5.1, 5.2 although the entire chapters 4, 5 are relevant
@@ -228,5 +234,23 @@ The final grade will be determined by the above with weights (**80\% exam - 20\%
 [Computer Class Notebook](/ComputerClasses/ComputerClassMCMC_pt1.Rmd)
 
 [Stan file for the Computer Class](/ComputerClasses/ToyExample.stan)
+
+
+---
+
+#### Week 8. Mixture Models and the EM algorithm
+
+[Lecture Slides](/LectureSlides/SlidesWeek08.pdf)
+
+*Topics covered in Lecture*: 
+ - Data augmentation 
+ - Clustering 
+ - EM algorithm
+ - Gaussian mixtures
+ - K-means
+ - Overfitted mixtures
+
+*Further Reading (Optional)*:
+ - Gelman et al, Chapters 22 and 23
 
 ---
