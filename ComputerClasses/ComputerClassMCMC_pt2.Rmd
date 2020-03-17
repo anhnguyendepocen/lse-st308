@@ -1,0 +1,83 @@
+---
+title: "ST308 Computer Workshop MCMC part 2"
+output: html_document
+---
+
+## Demonstration
+
+The dataset contains cases from a study that was conducted between, 1958 and 1970 at the University of Chicago's Billings Hospital on the survival of patients who had undergone surgery for breastcancer.
+
+Four variables:
+  * Age of patient at time of operation 
+  * Patient's year of operation (year - 1900)
+  * Number of positive axillary nodes detected 
+  * Survival status (1 = the patient survived 5 years or longer, 2 = the patient died within 5 year)
+
+First we load the data and fit a logistic regression model with MLE
+
+```{r}
+library(data.table)
+url <- "https://archive.ics.uci.edu/ml/machine-learning-databases/haberman/haberman.data"
+biopsy <- fread(url, sep = ",", header = FALSE)
+column.names <- c('age', 'year', 'nodes', 'survival')
+setnames(biopsy, column.names)
+biopsy$survival[biopsy$survival==2] = 0;
+summary(biopsy)
+fit1 = glm(survival~age+year+nodes,family=binomial,data=biopsy)
+summary(fit1)
+```
+
+The task is to run a MCMC sampler via RStan to sample from the posterior of the logistic regression coefficients $\beta$. Normal priors can be assigned on the $\beta$ coefficients with zero mean and some reasonably large variance -say 100. The model can be written as
+
+$$y_i\sim Bernoulli(\pi_i),\;\; i=1,...,n$$
+
+$$\pi_i = \text{logit}^{-1}(X\beta),$$
+$$\beta_0 \sim N(0,100I_4),$$
+where $y_i$ denotes the survival status, $X$ is the design matrix with the first column consisting on 1's, second column being the age variable, 3rd column the year variable and 4th column the nodes detected variable for the $n$ individuals. $I_4$ denotes the identity matrix of dimension 4.
+
+
+#### Code to fit MCMC with Stan
+
+Load stan
+
+```{r}
+library(rstan)
+rstan_options(auto_write = TRUE)
+```
+
+Prepare the data 
+
+```{r}
+y = biopsy$survival # y variable
+n = length(y) # number of observations
+X = cbind(rep(1,n),subset(biopsy, select = -survival)) # add one column of 1's for the constant and remove the y variable
+X = cbind(rep(1,n),subset(biopsy, select = c(age,year,nodes))) # does the same as above
+p = dim(X)[2] # number of variables plus the constant
+
+biopsy_dat=list(n=n, p=p, X=X, y=y)
+```
+
+For the model see the file `LogisticRegression.stan`. Next we run MCMC
+
+```{r}
+fit <- stan(file = 'LogisticRegression.stan', data = biopsy_dat,chains=2,init=0,seed=1)
+```
+
+summarise posterior output
+
+```{r}
+print(fit)
+traceplot(fit)
+plot(fit, pars=c("beta[2]","beta[3]","beta[4]"),show_density = TRUE, ci_level = 0.95, fill_color = "green")
+```
+
+## Activity
+
+Repeat but now fit a model with only the age and the nodes detected variables.
+
+Put your code below
+
+```{r}
+
+```
+
