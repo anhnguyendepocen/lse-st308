@@ -227,7 +227,7 @@ The final grade will be determined by the above with weights (**80\% exam - 20\%
 
 [Computer Class Notebook](/ComputerClasses/ComputerClassMCMC_pt1.Rmd)
 
-[Computer Class Notebook](/ComputerClasses/ComputerClassMCMC_pt1_CodeActivities.Rmd)
+[Computer Class Notebook with code for the activity](/ComputerClasses/ComputerClassMCMC_pt1_CodeActivities.Rmd)
 
 [Stan file for the Computer Class](/ComputerClasses/ToyExample.stan)
 
@@ -266,8 +266,30 @@ Same lecture slides, topics covered and reading as week 8
 
 [Computer Class Notebook](/ComputerClasses/ComputerClassMCMC_pt2.Rmd)
 
-[Computer Class Notebook](/ComputerClasses/ComputerClassMCMC_pt2_CodeActivity.Rmd)
+[Computer Class Notebook with code for the activity](/ComputerClasses/ComputerClassMCMC_pt2_CodeActivity.Rmd)
 
 [Stan file for the Computer Class](/ComputerClasses/LogisticRegression.stan)
 
+---
+
+#### Week 10. Gaussian Processes
+
+[Lecture Slides](/LectureSlides/SlidesWeek10.pdf)
+
+*Topics covered in Lecture*: 
+ - Bayesian non-parameteric regression and classification
+ - Variance kernels 
+ - Gaussian process posterior
+ - Gaussian process predictive distribution
+
+*Further Reading (Optional)*:
+ - Gelman et al, Chapter 21
+ 
+*Practice on Stan MCMC
+
+[Computer Class Notebook](/ComputerClasses/ComputerClassMCMC_pt3.Rmd)
+
+[Computer Class Notebook with code for the activity](/ComputerClasses/ComputerClassMCMC_pt3_CodeActivity.Rmd)
+
+ 
 ---
