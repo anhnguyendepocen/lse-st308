@@ -1,0 +1,123 @@
+---
+title: "Exercise2"
+author: "Kostas Kalogeropoulos"
+date: "16/03/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+### Model and priors
+
+Let $y=(y_1,\dots,y_n)$ be a r.s. from a N($\mu,v$) where $v$ is distributed according to an IGamma($\frac{N}{2},\frac{N}{2}\sigma^2$). The parameter $N$ is assumed to be known. Finalise the model with an improper prior on $\mu,\sigma^2$, $\pi(\mu,\sigma^2)\propto 1$.
+
+### Part b: Gibbs Sampler details
+
+The full conditional posterior for $v$ is
+\begin{align*}
+  \pi(v|\mu,\sigma^2,y)&  \propto v^{-\frac{n+N}{2}-1} \exp\left(-\frac{\frac{\sum_{i=1}^n(y_i-\mu)^2}{2}}{v}\right) \exp\left(-\frac{\frac{N}{2}\sigma^2}{ v}\right)\\
+  &=v^{-\frac{n+N}{2}-1}  \exp\left(-\frac{\frac{N\sigma^2+\sum_{i=1}^n(y_i-\mu)^2}{2}}{v}\right)\\
+  &\overset{\mathcal{D}}{=} \text{IGamma}\left(\frac{n+N}{2}, \frac{N\sigma^2+\sum_{i=1}^n(y_i-\mu)^2}{2}\right),
+\end{align*}
+
+whereas for $\mu$ is
+
+\begin{align*}
+  \pi(\mu|v,\sigma^2,y)&\propto \exp\left(-\sum_{i=1}^n\frac{(\mu^2-2\mu y_i+y_i^2)}{2v}\right)\propto\exp\left(-\frac{n\mu^2-2\mu \sum_{i=1}^n y_i}{2v} \right)\\
+  &=\exp\left(-\frac{\mu^2-2\mu\bar{y}}{2v/n}\right)
+  \overset{\mathcal{D}}{=} \text{ N} \left(\bar{y},\frac{v}{n}\right),
+\end{align*}
+
+and for $\sigma^2$
+
+\begin{align*}
+  \pi(\sigma^2|v,\mu,y)&\propto (\sigma^2)^{N/2 +1 -1} \exp\left(-\frac{N}{2v}\sigma^2\right)
+  \overset{\mathcal{D}}{=} \text{ Gamma} \left(N/2 +1,\frac{N}{2v}\right),
+\end{align*}
+
+
+### Part c: Simulate Data and Run Gibbs Sampler
+
+```{r cars}
+n = 200 #sample size
+mu_true = 2
+v_true = 1
+sigma2_true = 1
+N = 20
+y = rnorm(n,mu_true,sqrt(v_true))
+ybar = mean(y)
+S2 = sum((y-ybar)**2)
+c(ybar,S2/(n-1))
+dat=list(y=y,n=n,N=N)
+```
+
+
+```{r}
+Niter = 10000 # number of iterations
+
+#create object mus and sigma2s to store the Markov chain samples, 
+#with $\pi(\theta,\sigma^2|y)$ as stationary distribution
+out_mu = rep(0,Niter)
+out_v = rep(0,Niter)
+out_sigma2 = rep(0,Niter)
+
+
+#Set initial values for mu and sigma2
+mu = 10
+sigma2 = 5
+v = 4
+
+#Main loop of Gibbs Sampler
+for (iter in 1:Niter){
+  # Store mu and sigma2 values
+  out_mu[iter] = mu 
+  out_v[iter] = v
+  out_sigma2[iter] = sigma2
+  
+  #update mu given v sigma2 (and y)
+  mu = rnorm(1,ybar,sqrt(v/n))
+  
+  #update v given mu sigma2 (and y)
+  A = 0.5*(n + N)                  #a parameter of the full conditional of v
+  B = N*sigma2 + sum((y-mu)**2)  #B parameter of the full conditional of sigma2
+  v = 1/rgamma(1,A,B/2)
+  
+  #update sigma2 given mu (and y)
+  sigma2  = rgamma(1,1+0.5*N, N/(2*v));
+}
+```
+
+### Part d: Check MCMC output
+
+```{r}
+plot(out_mu,type='l')
+plot(out_v,type='l')
+plot(out_sigma2,type = 'l')
+print('mu')
+print(c(mean(out_mu),median(out_mu),quantile(out_mu,probs=c(0.025,0.975))))
+print('v')
+print(c(mean(out_v),median(out_v),quantile(out_v,probs=c(0.025,0.975))))
+print('sigma2')
+print(c(mean(out_sigma2),median(out_sigma2),quantile(out_sigma2,probs=c(0.025,0.975))))
+```
+
+
+### Part e: Repear using Stan
+
+
+```{r}
+library(rstan)
+rstan_options(auto_write = TRUE)
+```
+
+```{r}
+fit <- stan(file = 'Ex2e.stan', data = dat, init=0,chains=1,seed=1)
+```
+
+```{r}
+print(fit)
+plot(fit)
+```
