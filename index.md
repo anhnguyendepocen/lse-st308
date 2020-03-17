@@ -233,9 +233,9 @@ The final grade will be determined by the above with weights (**80\% exam - 20\%
 
 [Problem set 7 with solutions](/ProblemSets/ProblemSet07_WithSolutions.pdf)
 
-[Exercise 2 parts b,c,d and e](/ProblemSets/Excercise2cde.html)
+[Exercise 2 parts b,c,d and e](/ProblemSets/Exercise2cde.html)
 
-[Exercise 2 parts b,c,d and e R Markdown file](/ProblemSets/Excercise2cde.Rmd)
+[Exercise 2 parts b,c,d and e R Markdown file](/ProblemSets/Exercise2cde.Rmd)
 
 [Exercise 2 part e stan file](/ProblemSets/Ex2e.stan)
 
