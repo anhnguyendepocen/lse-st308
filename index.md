@@ -31,8 +31,8 @@
 | 6        | [Bayesian Classification](#week-6-bayesian-classification) |
 | 7        | [Markov Chain Monte Carlo](#week-7-markov-chain-monte-carlo) | 
 | 8        | [Mixture models and the EM algorithm](#week-8-mixture-models-and-the-em-algorithm)|
-| 9        | [Gaussian Processes](#week-9-generalization-and-function-approximation) |
-| 10       | [Variational Bayes](#week-10-policy-gradient-methods)           |
+| 9        | [Mixture models part 2](#week-9-mixture-models-part-2) |
+| 10       | [Gaussian Processes](#week-10-gaussian-processes)           |
 
 ### Course Description
 
@@ -222,19 +222,14 @@ The final grade will be determined by the above with weights (**80\% exam - 20\%
  
  [R demonstration of a Markov Chain](/LectureSlides/MarkovChainExample.Rmd)
  
- [Using MCMC for Radon data](/LectureSlides/RadonMultilevelExampleStan.html)
- 
- [Radon data](/LectureSlides/radon.csv)
- 
- [Stan file for Radon data MCMC](/LectureSlides/RadonMultilevel.stan)
-
 *Further Reading (Optional)*:
  - Gammerman and Lopes, mainly Sections 5.1, 5.2 although the entire chapters 4, 5 are relevant
 
 [Computer Class Notebook](/ComputerClasses/ComputerClassMCMC_pt1.Rmd)
 
-[Stan file for the Computer Class](/ComputerClasses/ToyExample.stan)
+[Computer Class Notebook](/ComputerClasses/ComputerClassMCMC_pt1_CodeActivities.Rmd)
 
+[Stan file for the Computer Class](/ComputerClasses/ToyExample.stan)
 
 ---
 
@@ -252,5 +247,27 @@ The final grade will be determined by the above with weights (**80\% exam - 20\%
 
 *Further Reading (Optional)*:
  - Gelman et al, Chapters 22 and 23
+ 
+*Practice on Stan MCMC
+
+[Using MCMC for Radon data](/LectureSlides/RadonMultilevelExampleStan.html)
+ 
+[Radon data](/LectureSlides/radon.csv)
+ 
+[Stan file for Radon data MCMC](/LectureSlides/RadonMultilevel.stan)
+ 
+---
+
+#### Week 9. Mixture Models part 2
+
+Same lecture slides, topics covered and reading as week 8
+
+*Computer Class: Practice on MCMC in Stan*
+
+[Computer Class Notebook](/ComputerClasses/ComputerClassMCMC_pt2.Rmd)
+
+[Computer Class Notebook](/ComputerClasses/ComputerClassMCMC_pt2_CodeActivity.Rmd)
+
+[Stan file for the Computer Class](/ComputerClasses/LogisticRegression.stan)
 
 ---
