@@ -285,7 +285,7 @@ Same lecture slides, topics covered and reading as week 8
 *Further Reading (Optional)*:
  - Gelman et al, Chapter 21
  
-*Practice on Stan MCMC
+*Practice on Stan MCMC*
 
 [Computer Class Notebook](/ComputerClasses/ComputerClassMCMC_pt3.Rmd)
 
