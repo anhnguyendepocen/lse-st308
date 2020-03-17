@@ -231,6 +231,14 @@ The final grade will be determined by the above with weights (**80\% exam - 20\%
 
 [Stan file for the Computer Class](/ComputerClasses/ToyExample.stan)
 
+[Problem set 7 with solutions](/ProblemSets/ProblemSet07_WithSolutions.pdf)
+
+[Exercise 2 parts b,c,d and e](/ProblemSets/Excercise2cde.html)
+
+[Exercise 2 parts b,c,d and e R Markdown file](/ProblemSets/Excercise2cde.Rmd)
+
+[Exercise 2 part e stan file](/ProblemSets/Ex2e.stan)
+
 ---
 
 #### Week 8. Mixture Models and the EM algorithm
