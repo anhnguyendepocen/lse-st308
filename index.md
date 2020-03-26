@@ -299,5 +299,6 @@ Same lecture slides, topics covered and reading as week 8
 
 [Computer Class Notebook with code for the activity](/ComputerClasses/ComputerClassMCMC_pt3_CodeActivity.Rmd)
 
+ [Stan file for the Computer Class](/ComputerClasses/RadonLogisticMultilevel.stan)
  
 ---
