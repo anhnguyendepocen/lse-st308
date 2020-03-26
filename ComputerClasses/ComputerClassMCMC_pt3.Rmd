@@ -1,0 +1,57 @@
+---
+title: "Computer Class ST308 Week 10"
+author: "Kostas Kalogeropoulos"
+date: "26/03/2020"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+## Load data
+
+```{r}
+RadonData = read.csv('radon.csv',header=TRUE)
+summary(RadonData)
+```
+
+convert the string (factor variable) county to numeric
+
+```{r}
+RadonData$county = as.numeric(RadonData$county)
+```
+
+Create a new binary variable y that takes the value 1 if the variable logRadon is above its median and 0 otherwise
+
+```{r}
+RadonData$y = RadonData$logRadon>median(RadonData$logRadon)
+mean(RadonData$y)
+```
+
+## Model
+
+Consider the following model
+
+$$
+ y_{ij} \sim \text{Bernoulli}[\pi_{ij}(X_{ij})],
+$$ 
+$$
+ \log\left(\frac{\pi_{ij}(X_{ij})}{1-\pi_{ij}(X_{ij})}\right) = \alpha_{i} +\beta X_{ij},
+$$
+ $$
+ \alpha_i \overset{\text{ind}}{\sim}N(\mu_{a},\sigma_{a}^2)
+ $$
+ $$
+  \mu_{a}\sim N(0,10)
+ $$
+ $$
+ \sigma_{a}\sim \text{HalfCauchy}(1)
+ $$
+ $$
+ \beta \sim N(0,1000^2)
+ $$
+
+
+## Demonstration / Activity
+
+Fit the above model in Stan and present the MCMC output. Put your code below.
+
