@@ -231,6 +231,8 @@ The final grade will be determined by the above with weights (**80\% exam - 20\%
 
 [Stan file for the Computer Class](/ComputerClasses/ToyExample.stan)
 
+[Stan file for Linear Regression](/ComputerClasses/LinearRegression.stan)
+
 [Problem set 7 with solutions](/ProblemSets/ProblemSet07_WithSolutions.pdf)
 
 [Exercise 2 parts b,c,d and e](/ProblemSets/Exercise2cde.html)
